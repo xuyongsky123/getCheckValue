@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>原生js获取input[type="checkbox"]，input[type="radio"]被选中的input的value值功能封装及示例</title>
+	<script type="text/javascript" src="js/getCheckValue.js"></script>
+</head>
+<body>
+	<div id="cb-container">
+		<input type="checkbox" name="tcb" value="checkbox1" /><label>checkbox1</label><br/>
+		<input type="checkbox" name="tcb" value="checkbox2" /><label>checkbox2</label><br/>
+		<input type="checkbox" name="tcb" value="checkbox3" /><label>checkbox3</label><br/>
+		<input type="checkbox" name="tcb" value="checkbox4" /><label>checkbox4</label><br/>
+		<input type="checkbox" name="tcb" value="checkbox5" /><label>checkbox5</label><br/>
+	</div>
+	<hr/>
+	<div id="rd-container">
+		<input type="radio" name="trd" value="radio1" /><label>radio1</label><br/>
+		<input type="radio" name="trd" value="radio2" /><label>radio2</label><br/>
+		<input type="radio" name="trd" value="radio3" /><label>radio3</label><br/>
+		<input type="radio" name="trd" value="radio4" /><label>radio4</label><br/>
+		<input type="radio" name="trd" value="radio5" /><label>radio5</label><br/>
+	</div>
+	<hr/>
+
+	<button id="checkboxBtn">获取选中的input[type="checkbox"]的值</button><br/><br/>
+	<label>获取选中的checkbox的值如下：</label><br/><br/>
+	<div id="contentCheckbox"></div>
+	<hr/>
+
+	<button id="radioBtn">获取选中的input[type="radio"]的值</button><br/><br/>
+	<label>获取选中的radio的值如下：</label><br/><br/>
+	<div id="contentRadio"></div>
+
+
+	<script type="text/javascript">
+		document.getElementById('checkboxBtn').onclick = function(){
+			var a = Js_getCheckValue('tcb',document.getElementById('cb-container'));
+			document.getElementById('contentCheckbox').innerHTML = a;
+		}
+		document.getElementById('radioBtn').onclick = function(){
+			var a = Js_getCheckValue('trd',document.getElementById('rd-container'));
+			document.getElementById('contentRadio').innerHTML = a;
+		}
+	</script>
+</body>
+</html>
